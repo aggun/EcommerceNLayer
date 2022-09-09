@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Login";
+    
+}
+
+@model LoginModel
+
+<section class="my-5">
+    <div class="container px-4 px-lg-5 mt-5 justify-content-center">
+        <h3 class="mb-2 text-center">Login</h3>
+
+        <form class="auth-login-form" name="form" id="form" asp-action="Login" asp-controller="Account" method="post">
+            @Html.HiddenFor(x => x.ReturnUrl)
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+
+            <div class="mb-1">
+                <label asp-for="Email" class="form-label">Email</label>
+                <input type="email" class="form-control" required asp-for="Email" placeholder="john@example.com" autofocus />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label" asp-for="Password">Password</label>
+
+                <input type="password" asp-for="Password" required class="form-control" id="login-password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            @if (ViewBag.msg != null)
+            {
+                <div id="msg" class="alert alert-danger p-1 mb-2 mt-2" style="display:block" role="alert">
+                    @ViewBag.msg
+                </div>
+            }
+            <button type="submit" class="btn btn-primary w-100" tabindex="4">Giriş Yap</button>
+
+        </form>
+
+    </div>
+</section>

@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "CreateProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
+@model Product
+@{
+    List<Feature> FeaturList = ViewBag.FeaturList;
+    List<Category> CategoryList = ViewBag.CategoryList;
+}
+
+<div class="bg-white p-3 shadow rounded">
+
+    <h4><strong>Yeni Ürün Oluştur</strong></h4>
+
+    <form asp-controller="Administrator" asp-action="CreateProduct" class="form-group" enctype="multipart/form-data">
+        <input type="hidden" asp-for="BrandId" value="@ViewBag.BrandId" />
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="form-label">Ürün Adı<span class="text-danger">*</span></label>
+                <input type="text" required class="form-control" asp-for="Name" />
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Ürün Kategorisi<span class="text-danger">*</span></label><br />
+                <select class="selectpicker form-control" required multiple data-actions-box="true" name="CategoriesId" asp-items="@(new SelectList(CategoryList,"Id","Name"))">
+                </select>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="form-label">Ürün Fotoğrafı<span class="text-danger">*</span></label><br />
+                <input type="file" class="form-control" required asp-for="ImageUrl" />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Özellikler<span class="text-danger">*</span></label><br />
+                <select class="selectpicker form-control" required multiple data-actions-box="true" name="FeaturIds" asp-items="@(new SelectList(FeaturList,"Id","NameFalue"))">
+                </select>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="form-label">Ürün Açıklaması<span class="text-danger">*</span></label><br />
+                <textarea class="form-control" asp-for="ProductDescription"></textarea>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Ürün Fiyatı<span class="text-danger">*</span></label><br />
+                <input type="number" step="0.01" asp-for="Price" class="form-control" placeholder="0,0" required>
+            </div>
+
+        </div>
+        <div align="center">
+            <button type="submit" class="btn btn-success">Save</button>
+        </div>
+
+    </form>
+
+</div>
+
+@section Scripts{
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+
+}

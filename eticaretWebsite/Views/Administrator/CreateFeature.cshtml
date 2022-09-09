@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "CreateFeature";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@model Feature
+
+<div class="bg-white p-3 shadow rounded">
+
+    <h4><strong>Yeni Özellik Oluştur</strong></h4>
+
+    <form asp-controller="Administrator" asp-action="CreateFeature" class="form-group" enctype="multipart/form-data">
+        <input type="hidden" asp-for="BrandId" value="@ViewBag.BrandId" />
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="form-label">Özellik Adı<span class="text-danger">*</span></label>
+                <input type="text" required class="form-control" asp-for="FeatureName" />
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Özellik Değeri<span class="text-danger">*</span></label>
+                <input type="text" required class="form-control" asp-for="FeatureValu" />
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="form-label">İndirim Oranı (varsa)</label><br />
+                <input type="number" asp-for="DicountRate" class="form-control" placeholder="0">
+            </div>
+            <div class="col-md-6">
+                <div class="form-check">
+                    <br />
+                    <input class="form-check-input" asp-for="IsDiscounted" type="checkbox" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Bu Özellik İndirimde mi (indirimde ise işaretle)
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div align="center">
+            <button type="submit" class="btn btn-success">Save</button>
+        </div>
+
+    </form>
+
+</div>

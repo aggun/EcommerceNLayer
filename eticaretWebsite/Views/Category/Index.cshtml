@@ -1,0 +1,15 @@
+﻿
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@model List<Category>
+<h1>Index</h1>
+
+
+@foreach (var item in Model)
+{
+    <p>@item.Name</p>
+    <p>@item.Status</p>
+}

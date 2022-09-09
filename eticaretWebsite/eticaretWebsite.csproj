@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-eticaretWebsite-E0B6B27D-C8DC-48C5-BE2F-84559F15CC8D</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Castle.Windsor" Version="5.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.5" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj" />
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj" />
+    <ProjectReference Include="..\EntityLayer\EntityLayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Admin\Properties\PublishProfiles\FolderProfile.pubxml.user" />
+    <None Include="wwwroot\Admin\Properties\PublishProfiles\FolderProfile1.pubxml.user" />
+    <None Include="wwwroot\Admin\Properties\PublishProfiles\FolderProfile2.pubxml.user" />
+    <None Include="wwwroot\Admin\Properties\PublishProfiles\FolderProfile3.pubxml.user" />
+    <None Include="wwwroot\Admin\Properties\PublishProfiles\FolderProfile4.pubxml.user" />
+    <None Include="wwwroot\Admin\Properties\serviceDependencies.local.json.user" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Product-img\" />
+  </ItemGroup>
+
+</Project>

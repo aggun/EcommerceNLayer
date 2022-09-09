@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Marka Başvuru Formu";
+
+}
+@model BrandRegisterModel
+
+<section class="my-5">
+    <div class="container px-4 px-lg-5 mt-5 justify-content-center">
+        <h4>Marka Başvuru Formu</h4>
+        <form asp-action="BrandRegister" asp-controller="Account" method="post" class="form-group">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <div class="col mb-1">
+                    <label asp-for="Name">Ad</label>
+                    <input type="text" class="form-control" asp-for="Name" placeholder="Ad">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="col mb-1">
+                    <label asp-for="Surname"> Soyad</label>
+                    <input type="text" class="form-control" asp-for="Surname" placeholder="Soyad">
+                    <span asp-validation-for="Surname" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group ">
+                <div class="col mb-1">
+                    <label asp-for="BrandName">Marka Adı</label>
+                    <input type="text" class="form-control" asp-for="BrandName" placeholder="Marka Adı">
+                    <span asp-validation-for="BrandName" class="text-danger"></span>
+                </div>
+
+            </div>
+            <div class="form-group ">
+                <div class="col mb-1">
+                    <label asp-for="Email">Kullanıcı Email</label>
+                    <input type="email" class="form-control" asp-for="Email" placeholder="Email">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+            </div>
+            <div class="form-group ">
+                <div class="col mb-1">
+                    <label asp-for="UserName">Kullanıcı adı</label>
+                    <input type="text" class="form-control" asp-for="UserName" placeholder="Kullanıcı Adı">
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group  mb-2">
+                <div class="col mb-1">
+                    <label asp-for="Password"> Şifre</label>
+                    <input type="password" class="form-control" asp-for="Password" placeholder="Şifre">
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+            </div>
+            <div align="center">
+                <button type="submit" class="btn btn-success">Kaydet</button>
+            </div>
+
+        </form>
+
+    </div>
+</section>
